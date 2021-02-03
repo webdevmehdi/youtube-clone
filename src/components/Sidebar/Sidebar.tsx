@@ -1,32 +1,20 @@
 import React from "react";
-import styles from './Sidebar.module.css'
+import NavigationItems from "../NavigationItems/NavigationsItems";
+
 type Props = {
-  home: string;
-  trending: string;
-  subscription: string;
-};
+open : boolean;
+closed : boolean;
 
-const Sidebar: React.FC<Props> = ({ home, trending, subscription }) => {
+}
+const Sidebar: React.FC<Props> = ({open, closed}) => {
+  if(open === true)
   return (
-      
+    
     <div>
-       
-<div className={styles.DrawerToggler} onClick={clicked}>
-
-</div>
-    )
-      <ul>
-        <li>
-          <h1>{home}</h1>
-        </li>
-        <li>
-          <h1>{trending}</h1>
-        </li>
-        <li>
-          <h1>{subscription}</h1>
-        </li>
-      </ul>
+      <nav>
+        <NavigationItems />
+      </nav>
     </div>
-  );
+  )
 };
 export default Sidebar;
