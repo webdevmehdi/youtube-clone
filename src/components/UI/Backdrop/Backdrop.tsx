@@ -1,14 +1,15 @@
 import React from "react";
-import styles from './Backrop.module.css';
+import styles from './Backdrop.module.css'
  type Props = {
      show : boolean;
-     clicked : any 
+     closed : ()=> void ; 
  }
 
-const Backdrop : React.FC<Props> = ({show, clicked}) =>{
+const Backdrop : React.FC<Props> = ({show, closed}) =>{
 return(
-   show ? <div className={styles.Backdrop} onClick={clicked}></div>
+   show ? <div className={styles.Backdrop} onClick={closed }></div>
 : null
+ 
 )
 }
 export default Backdrop;

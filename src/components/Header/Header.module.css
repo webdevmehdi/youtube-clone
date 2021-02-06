@@ -5,8 +5,8 @@
     position: sticky;
     top: 0;
     height:70px ;
-    z-index: 100;
-    background-color: white;
+/*     z-index: 100;
+ */    background-color: white;
 
 }
 
@@ -51,6 +51,7 @@ align-items: center;
     border: 1px solid lightgray;
 }
 
+
 .mic__button{
    margin-left: -350px;
    width: 20px;
@@ -63,4 +64,5 @@ align-items: center;
 }
 .MenuIcon{
     margin-left: 20px;
+    cursor: pointer;
 }

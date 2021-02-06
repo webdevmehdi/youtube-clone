@@ -1,0 +1,18 @@
+.Container {
+
+    display: flex;
+
+}
+
+.Container > .Sidebar {
+   
+flex: 20;
+
+}
+
+.Container >.RecommendedVideos{
+  margin-top: 30px;
+    flex : 80 ;
+    display: flex;
+    /* flex-wrap: wrap; */
+}

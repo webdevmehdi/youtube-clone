@@ -1,29 +1,44 @@
-import React ,{useState} from 'react';
+import React, { useState } from "react";
 import Header from "./components/Header/Header";
-import Sidebar from './components/Sidebar/Sidebar'
-import Backdrop from './components/UI/Backdrop/Backdrop'
- const App = () => {
+import Sidebar from "./components/Sidebar/Sidebar";
+import Backdrop from "./components/UI/Backdrop/Backdrop";
+import "./App.css";
+const App = () => {
+  const [showSidebar, SetShowSidebar] = useState(false);
 
-const [showSidebar, SetShowSidebar] = useState(true);
-
-  const showSidebarHandler = () => {
+  /* const showSidebarHandler = () => {
     SetShowSidebar(currentState => !currentState);
   }
+ */
+  const togglerHandler = () => {
+    SetShowSidebar((currentState) => !currentState);
+  };
 
   const hideSidebarHandler = () => {
-    SetShowSidebar(false)
-  }
-
-
+    SetShowSidebar(false);
+  };
 
   return (
-    <div className="app">
-      
-      <Header />
-      <Backdrop show = {showSidebar} clicked = {hideSidebarHandler}/>
-      <Sidebar open = {showSidebar}  closed = {showSidebar}/>
+    <div>
+      <div>
+        <Header toggler={togglerHandler} />
+        <Backdrop show={showSidebar} closed={hideSidebarHandler} />
+      </div>
+
+      <div className="Container">
+            <div className="Sidebar" ><Sidebar open={showSidebar} /></div>
+            
+
+         <div className="RecommendedVideos">
+                <p>Videos</p>
+            </div>
+         
+    
+
+        
+      </div>
     </div>
   );
-}
+};
 
 export default App;

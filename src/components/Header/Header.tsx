@@ -6,11 +6,20 @@ import VideoCallIcon from "@material-ui/icons/VideoCall";
 import AppsIcon from "@material-ui/icons/Apps";
 import styles from "./Header.module.css";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-const Header = () => {
+
+type Props = {
+  toggler : any ;
+}
+
+const Header : React.FC<Props>= ({toggler}) => {
+
+
+
+
   return (
     <div className={styles.header}>
       <div className={styles.header__left}>
-        <MenuIcon className={styles.MenuIcon} />
+        <MenuIcon onClick = {toggler} className={styles.MenuIcon} />
         <img
           className={styles.header__logo}
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/1920px-Logo_of_YouTube_%282015-2017%29.svg.png"
@@ -20,7 +29,7 @@ const Header = () => {
 
       <div className={styles.header__middle}>
         <input placeholder="Search" />
-       <button className={styles.SearchIcon} ><SearchIcon /></button> 
+       <button className={styles.SearchIcon}  ><SearchIcon /></button> 
         <MicIcon />
       </div>
       <div className={styles.Headerright}>
